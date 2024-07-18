@@ -8,9 +8,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tabela_usuarios")
+@Table(name = "tb_user")
 
-public class Usuarios {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +19,10 @@ public class Usuarios {
 	 private String email;
 	 
 	 @ManyToOne
-	 @JoinColumn(name = "usuarios_id")
-	 private Departamento Departamento;
+	 @JoinColumn(name = "department_id")
+	 private Department Department;
 	 
-	 public Usuarios() {
+	 public User() {
 		 
 	 }
 
@@ -50,12 +50,12 @@ public class Usuarios {
 		this.email = email;
 	}
 
-	public Departamento getDepartamento() {
-		return Departamento;
+	public Department getDepartment() {
+		return Department;
 	}
 
-	public void setDepartamento(Departamento departamento) {
-		Departamento = departamento;
+	public void setDepartment(Department departamento) {
+		Department = departamento;
 	}
 		 
 	 }
